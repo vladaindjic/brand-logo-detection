@@ -1,0 +1,11 @@
+.idea/
+*.jpg
+*.JPEG
+*.hdf5
+*.features
+*.labels
+*.images
+*.pyc
+
+
+
