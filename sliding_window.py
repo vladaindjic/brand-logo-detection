@@ -21,6 +21,8 @@ IMAGE_WIDTH = 128
 IMAGE_HEIGHT = 128
 SHOW_IMAGES = True
 TEST_SLIDING_WINDOW_PATH = "../test-detection"
+DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH = "../demonstration"
+
 HITS_NUM = 0
 MISSES_NUM = 0
 NUMBER_OF_TRIES = 0
@@ -202,10 +204,52 @@ def test_all_images():
     print("Number of misses: %d" % MISSES_NUM)
 
 
+def test_all_images_demonstration():
+    global SHOW_IMAGES
+    global HITS_NUM
+    global MISSES_NUM
+    global NUMBER_OF_TRIES
+    HITS_NUM = 0
+    MISSES_NUM = 0
+    NUMBER_OF_TRIES = 0
+    SHOW_IMAGES = False
+    with open(join(DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH, "labels.txt")) as annot:
+        for line in annot.readlines():
+            if line.strip() == "":
+                continue
+            elif "=" in line:
+                break
+            img_rel_path, class_name = re.split("\\s+", line.strip())
+            print("Looking for logo at image: %s" % img_rel_path)
+            found = find_logo(join(DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH, img_rel_path.strip()))
+            # found = set()
+            # da li smo pogodili
+            hit_num = 0
+            # da li smo pogodili
+            if class_name in found:
+                hit_num += 1
+            # koliko smo promasili
+            miss_num = len(found) - hit_num
+            if miss_num > 0:
+                print("****************************************Greska prilikom trazenja loga na slici: " + img_rel_path)
+            print("=" * 33)
+            print("Number of hits for %s is %d" % (img_rel_path, hit_num))
+            print("Number of misses for %s is %d" % (img_rel_path, miss_num))
+            print("=" * 33)
+            HITS_NUM += hit_num
+            MISSES_NUM += miss_num
+            NUMBER_OF_TRIES += 1
+    print("\n\n\n")
+    print("Number of tries: %d" % NUMBER_OF_TRIES)
+    print("Number of hits: %d" % HITS_NUM)
+    print("Number of misses: %d" % MISSES_NUM)
+
+
 def main():
-    test_all_images()
+    # test_all_images()
     # slika koju uspe da prepozna
     # find_logo(join(TEST_SLIDING_WINDOW_PATH, "fedex1.jpg"))
+    test_all_images_demonstration()
 
 
 if __name__ == "__main__":

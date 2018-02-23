@@ -125,7 +125,7 @@ def find_image_and_apply_hog(path):
 
 if __name__ == '__main__':
     # hog_applier = HogApplier.get_instance()
-    # features = hog_applier.get_features("adidas1.JPEG")
+    # features = hog_applier.get_features("adidas333.JPEG")
     # print(len(features))
     # features = hog_applier.get_features("none1.JPEG")
     # print(len(features))
