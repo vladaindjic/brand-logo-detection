@@ -249,7 +249,10 @@ def main():
     # test_all_images()
     # slika koju uspe da prepozna
     # find_logo(join(TEST_SLIDING_WINDOW_PATH, "fedex1.jpg"))
-    test_all_images_demonstration()
+
+    found = find_logo(join(DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH, "mini1.jpg"))
+    print(found)
+    # test_all_images_demonstration()
 
 
 if __name__ == "__main__":
