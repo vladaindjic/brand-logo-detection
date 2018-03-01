@@ -345,8 +345,8 @@ def main():
 
 
     #DONE: MINI
-    found = find_logo(join(DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH, "mini1.jpg"))
-    print(found)
+    # found = find_logo(join(DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH, "mini1.jpg"))
+    # print(found)
     # found = find_logo(join(DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH, "mini2.jpg"))
     # print(found)
 
@@ -395,8 +395,8 @@ def main():
 
 
     # DONE: Sprite
-    # found = find_logo(join(DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH, "sprite2.jpg"))
-    # print(found)
+    found = find_logo(join(DEMONSTRATION_SELECTIVE_SEARCH_IMAGE_PATH, "sprite2.jpg"))
+    print(found)
 
 
     # DONE: Starbucks
