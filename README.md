@@ -1,5 +1,15 @@
-# Detekcija logoa sa slike i određivanje njegovog brenda (Flickr-27)
+# Brand Logo Detection and Recognition
+Team student project that can be used to detect logo in the picture and recognise its brand. 
+In order to do this, it uses two approaches:
+- Traditional one based on sliding window method, HOG transformation and neural networks
+- Modern one based on Deep Learning that uses Convolutional Neural Networks and selective search.
 
+This projects also makes a comparison between aforementioned approaches. The reasons why the second approach is better than the first one can be found in the document [poster-logo-detection.pdf](https://github.com/vladaindjic/brand-logo-detection/blob/master/poster-logo-detection.pdf)
+
+**Note**: The rest of this document, so as [poster-logo-detection.pdf](https://github.com/vladaindjic/brand-logo-detection/blob/master/poster-logo-detection.pdf), are written in Serbian language for the purposes of the course [Soft Computing](http://www.ftn.uns.ac.rs/n672719865/soft-kompjuting). Both can be easily translated by using Google Translate.
+
+
+# Detekcija logoa sa slike i određivanje njegovog brenda (Flickr-27)
 
 ## Članovi tima 
 - SW 1/2014, Žarko Drageljević
@@ -45,7 +55,7 @@ U projektnom rešenju biće korišćen [Flickr Logos 27 dataset](http://image.nt
 - Unicef
 - Vodafone
 - Yahoo
-Takođe se nalazi i određeni broj slika na kojima nije prikazan nijedan logo. 
+- Takođe se nalazi i određeni broj slika na kojima nije prikazan nijedan logo. 
 S obzirom na to da je skup podataka relativno mali za obučavanje klasifikatora, potrebno je izvršiti augmentaciju slika (rotiranje, isecanje, dodavanje šuma, blur, ...) iz skupa, kako bi se skup podataka proširio. Skup podataka se deli na skup podataka za treniranje (80% ukupnog skupa podataka) i skup podataka za testiranje (20%).
 
 ## HOG transformacija 
